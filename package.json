@@ -1,0 +1,47 @@
+{
+  "name": "rezizer-url",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zanaca/rezizer-js"
+  },
+  "bugs": {
+    "url": "https://github.com/zanaca/rezizer-js/issues"
+  },
+  "author": "Zanaca <zanaca@gmail.com>",
+  "contributors": [
+  ],
+  "engines": {
+    "node": "6.x"
+  },
+  "scripts": {
+    "watch": "nodemon -q -x 'npm test-hashing'",
+    "lint": "eslint index.js",
+    "test": "npm run lint && tape test/basic.js | faucet",
+    "test-hashing": "npm run lint && tape test/basic.js test/hashing.js | faucet",
+    "test-requests": "npm run lint && tape test/basic.js test/requests.js | faucet",
+    "test-full": "npm run lint && tape test/basic.js test/hashing.js test/requests.js | faucet"
+  },
+  "devDependencies": {
+    "blue-tape": "0.2.0",
+    "eslint": "^2.9.0",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-react": "^5.0.1",
+    "eslint-plugin-import": "^1.7.0",
+    "eslint-plugin-jsx-a11y": "^1.2.0",
+    "eslint-config-standard": "5.3.5",
+    "faucet": "0.0.1",
+    "nodemon": "1.10.0"
+  },
+  "keywords": [
+    "resize",
+    "crop",
+    "optmize",
+    "thumbor",
+    "imageurl",
+    "rezizer"
+  ],
+  "readmeFilename": "README.md",
+  "license": "MIT"
+}
