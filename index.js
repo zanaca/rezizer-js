@@ -79,7 +79,7 @@ function buildPath(_operations) {
             if (operations[operataion] === 'focused') {
               faceOperataion += ':focused';
             }
-            parts.push(operation + ':' + operations[operation]);
+            parts.push(faceOperataion);
         } else if (concatenatedOperations.indexOf(operation) > -1) {
             parts.push(operation + ':' + operations[operation]);
         } else {
