@@ -74,6 +74,12 @@ function buildPath(_operations) {
             }
             parts.push(alignment);
             delete operations.align;
+        } else if (operation === 'face') {
+            let faceOperation = operation;
+            if (operations[operataion] === 'focused') {
+              faceOperataion += ':focused';
+            }
+            parts.push(operation + ':' + operations[operation]);
         } else if (concatenatedOperations.indexOf(operation) > -1) {
             parts.push(operation + ':' + operations[operation]);
         } else {
@@ -144,8 +150,8 @@ const rezizerBuilder = function rezizerBuilder(url, secret) {
         return this;
     };
 
-    this.faceDetection = function fd() {
-        this.operations.face = true;
+    this.faceDetection = function fd(inFocus) {
+        this.operations.face = inFocus ? 'focused' : true;
 
         return this;
     };
@@ -194,4 +200,6 @@ const rezizerBuilder = function rezizerBuilder(url, secret) {
     }
 };
 
-module.exports = rezizerBuilder;
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = rezizerBuilder;
+}
