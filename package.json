@@ -1,5 +1,6 @@
 {
   "name": "rezizer-url",
+  "description": "Rezizer URL generator - Build image URLs to be optmized.",
   "version": "1.0.0",
   "main": "index.js",
   "repository": {
