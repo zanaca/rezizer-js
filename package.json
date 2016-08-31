@@ -2,7 +2,7 @@
   "name": "rezizer-url",
   "description": "Rezizer URL generator - Building optmized image URLs.",
   "homepage": "http://www.rezizer.com",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -12,8 +12,7 @@
     "url": "https://github.com/zanaca/rezizer-js/issues"
   },
   "author": "Zanaca <zanaca@gmail.com>",
-  "contributors": [
-  ],
+  "contributors": [],
   "engines": {
     "node": "6.x"
   },
