@@ -36,7 +36,7 @@ function buildPath(_operations) {
         } else if (operation === 'resize') {
             let resizeStr = operations.resize.join('x');
             if (operations.retina) {
-                resizeStr += '@' + operations.retina;
+                resizeStr += '@' + operations.retina + 'x';
             }
             delete operations.retina;
             parts.push(resizeStr);
