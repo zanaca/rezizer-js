@@ -1,6 +1,6 @@
 # RezizerUrl - a NodeJS Rezizer Url Generator
 
-> PLEASE, if you wanna use it in browsers DO NOT use a secured version of Rezizer with the SECRET_KEY, prefer securing by whitelist your own image domain.
+> PLEASE, if you wanna use it in browsers DO NOT use a secured version of Rezizer with the SECRET_KEY. Prefer securing by whitelisting your own image domain.
 
 ## Install
 
