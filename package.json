@@ -2,7 +2,7 @@
   "name": "rezizer-url",
   "description": "Rezizer URL generator - Building optmized image URLs.",
   "homepage": "http://www.rezizer.com",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "main": "index.js",
   "repository": {
     "type": "git",
