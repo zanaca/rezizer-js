@@ -2,7 +2,7 @@ const crypto = require('crypto');
 
 
 const concatenatedOperations = ['tint', 'background', 'blur', 'format', 'max-age', 'max-kb',
-                                'overlay', 'quality', 'rotate', 'align'];
+                                'overlay', 'quality', 'rotate', 'align', 'color-filter'];
 const simpleOperations = ['distort', 'extend', 'fit', 'fit-in', 'flip', 'flop', 'tile',
                           'grayscale', 'invert', 'map', 'max', 'min', 'progressive', 'round'];
 
@@ -76,10 +76,12 @@ function buildPath(_operations) {
             delete operations.align;
         } else if (operation === 'face') {
             let faceOperation = operation;
-            if (operations[operataion] === 'focused') {
-              faceOperataion += ':focused';
+            if (operations[operation] === 'focused') {
+                faceOperation += ':focused';
             }
-            parts.push(faceOperataion);
+            parts.push(faceOperation);
+        } else if (operation === 'color-filter') {
+            parts.push(operations[operation]);
         } else if (concatenatedOperations.indexOf(operation) > -1) {
             parts.push(operation + ':' + operations[operation]);
         } else {
@@ -112,6 +114,7 @@ const rezizerBuilder = function rezizerBuilder(url, secret) {
 
     this.generate = function gen() {
         let path = buildPath(this.operations);
+        this.operations = {};
         if (this.secret) {
             path = generateHash(this.secret, path) + '/' + path;
         }
@@ -187,6 +190,9 @@ const rezizerBuilder = function rezizerBuilder(url, secret) {
         }
         if (operation === 'max-age') {
             method = 'maxAge';
+        }
+        if (operation === 'color-filter') {
+            method = 'colorFilter';
         }
         this[method] = function co(_value) {
             let value = _value;
